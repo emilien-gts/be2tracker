@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bankroll{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto p-5">
+        <div class="flex items-center pb-4 mb-3">
+            <h1 class="text-2xl font-semibold text-pink-500">My bankrolls</h1>
+            <div class="ml-auto"></div>
+            <a
+                class="inline-block rounded-full border-2 border-pink-500 bg-pink-500 p-3 text-white hover:bg-white hover:text-pink-500 hover:border-pink-500 focus:outline-none focus:ring active:text-pink-500"
+                href="{{ path('app_bankroll_new') }}"
+            >
+                {{ ux_icon('heroicons:plus', {class: 'size-7'}) }}
+            </a>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {% for bankroll in bankrolls %}
+                {{ _self._bankroll(bankroll) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% macro _bankroll(bankroll) %}
+    <article class="relative rounded-lg border border-gray-100 bg-white p-6">
+        <div class="absolute top-2 right-2 flex gap-2">
+            <a href="{{ path('app_bankroll_delete', {id: bankroll.id}) }}">
+                {{ ux_icon('heroicons:trash', {class: 'size-4 text-gray-500 hover:text-gray-700'}) }}
+            </a>
+        </div>
+        <div>
+            <p class="text-sm text-gray-500">
+                <a href="{{ path('app_bankroll_show', {id: bankroll.id}) }}">{{ bankroll.name }}</a>
+            </p>
+            <p class="text-2xl font-medium text-gray-900">{{ bankroll.balance|unit }}</p>
+        </div>
+
+        <div class="mt-1 flex gap-1 text-{{ bankroll.roi|trending_color }}-600">
+            {{ bankroll.roi|trending_icon({class: 'size-4'}) }}
+            <p class="flex gap-2 text-xs">
+                <span class="font-medium">{{ bankroll.roi }} %</span>
+            </p>
+        </div>
+    </article>
+{% endmacro %}

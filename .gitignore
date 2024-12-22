@@ -1,3 +1,5 @@
+/src/Import/Resources/
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -28,7 +30,3 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
-###< phpunit/phpunit ###

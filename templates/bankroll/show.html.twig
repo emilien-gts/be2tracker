@@ -1,0 +1,70 @@
+{% extends 'bankroll/layout.html.twig' %}
+
+{% block title %}Bankroll{% endblock %}
+
+{% block content %}
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+        <div class="h-[10vh] rounded-lg mb-5">
+            <article
+                class="h-full flex items-center gap-4 rounded-lg border border-gray-100 bg-white p-6 sm:justify-between"
+            >
+                <span class="rounded-full bg-pink-100 p-3 text-pink-600 sm:order-last mb-4">
+                    {{ ux_icon('heroicons:ticket', {class: 'size-6'}) }}
+                </span>
+
+                <div>
+                    <p class="text-2xl font-medium text-gray-900">{{ bankroll.bettingSlips|length }}</p>
+                    <p class="text-sm text-gray-500">Total bets</p>
+                </div>
+            </article>
+        </div>
+        <div class="h-[10vh] rounded-lg bg-gray-200">
+            <article
+                class="h-full flex items-center gap-4 rounded-lg border border-gray-100 bg-white p-6 sm:justify-between"
+            >
+                <span class="rounded-full bg-pink-100 p-3 text-pink-600 sm:order-last mb-4">
+                    {{ ux_icon('heroicons:banknotes', {class: 'size-6'}) }}
+                </span>
+
+                <div>
+                    <p class="text-2xl font-medium text-gray-900">{{ bankroll.balance|unit }}</p>
+                    <p class="text-sm text-gray-500">Starting at {{ bankroll.capital|unit }}</p>
+                </div>
+            </article>
+        </div>
+        <div class="h-[10vh] rounded-lg bg-gray-200">
+            <article
+                class="h-full flex items-center gap-4 rounded-lg border border-gray-100 bg-white p-6 sm:justify-between"
+            >
+                <span class="rounded-full bg-pink-100 p-3 text-pink-600 sm:order-last mb-4">
+                    {{ bankroll.profit|trending_icon({class: 'size-6'}) }}
+                </span>
+
+                <div>
+                    <p class="text-2xl font-medium text-gray-900">{{ bankroll.profit|unit }}</p>
+                    <p class="text-sm text-gray-500">Profit</p>
+                </div>
+            </article>
+        </div>
+        <div class="h-[10vh] rounded-lg bg-gray-200">
+            <article
+                class="h-full flex items-center gap-4 rounded-lg border border-gray-100 bg-white p-6 sm:justify-between"
+            >
+                <span class="rounded-full bg-pink-100 p-3 text-pink-600 sm:order-last mb-4">
+                    {{ bankroll.roi|trending_icon({class: 'size-6'}) }}
+                </span>
+
+                <div>
+                    <p class="text-2xl font-medium text-gray-900">{{ bankroll.roi|percent }}</p>
+                    <p class="text-sm text-gray-500">ROI</p>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="h-10"></div>
+
+    <div class="flex-grow h-[calc(60vh)]">
+        {{ render_chart(chart) }}
+    </div>
+{% endblock %}

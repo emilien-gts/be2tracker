@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ bankroll.name }}
+{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto p-5">
+        <div class="flex items-center">
+            <h1 class="text-2xl font-semibold text-pink-500">{{ bankroll.name }}</h1>
+            <div class="ml-auto"></div>
+            <a
+                class="inline-block rounded-full border-2 border-pink-500 bg-pink-500 p-3 text-white hover:bg-white hover:text-pink-500 hover:border-pink-500 focus:outline-none focus:ring active:text-pink-500"
+                href="{{ path('app_bettingslip_chosetype') }}"
+            >
+                {{ ux_icon('heroicons:plus', {class: 'size-7'}) }}
+            </a>
+        </div>
+        <div class="flex flex-col items-start">
+            <div class="mb-5 mt-3 w-full">
+                <nav class="flex gap-6 justify-start" aria-label="Tabs">
+                    <a
+                        href="{{ path('app_bankroll_show', {id: bankroll.id}) }}"
+                        class="shrink-0 rounded-lg p-2 text-sm font-medium {{ 'app_bankroll_show' == app.current_route ? 'bg-pink-100 text-pink-600' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700' }}"
+                        aria-current="page"
+                    >
+                        Overview
+                    </a>
+
+                    <a
+                        href="{{ path('app_bankroll_bets', {id: bankroll.id}) }}"
+                        class="shrink-0 rounded-lg p-2 text-sm font-medium {{ 'app_bankroll_bets' == app.current_route ? 'bg-pink-100 text-pink-600' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700' }}"
+                    >
+                        Bets
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

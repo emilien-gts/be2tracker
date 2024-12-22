@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ bs }}{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto p-5">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div class="h-32 rounded-lg"></div>
+            <div class="h-32 rounded-lg lg:col-span-2">
+                <div class="flex items-center pb-4 mb-3">
+                    <h1 class="text-2xl font-semibold text-pink-500">{{ bs }}</h1>
+                    <div class="ml-auto"></div>
+                    <a
+                        href="{{ path('app_bankroll_bets', {id: bs.bankroll.id}) }}"
+                            class="me-3 inline-block rounded-full border-2 border-pink-500 bg-pink-500 p-3 text-white hover:bg-white hover:text-pink-500 hover:border-pink-500 focus:outline-none focus:ring active:text-pink-500"
+                    >
+                        {{ ux_icon('heroicons:arrow-uturn-left', {width: '1.25rem', height: '1.25rem'}) }}
+                    </a>
+                    <button type="submit"
+                            form="form"
+                            class="inline-block rounded-full border-2 border-pink-500 bg-pink-500 p-3 text-white hover:bg-white hover:text-pink-500 hover:border-pink-500 focus:outline-none focus:ring active:text-pink-500"
+                    >
+                        {{ ux_icon('heroicons:arrow-down-on-square', {width: '1.25rem', height: '1.25rem'}) }}
+                    </button>
+                </div>
+
+                {{ form_start(form, {attr: {id: 'form'}}) }}
+                {{ form_row(form.date) }}
+                {{ form_row(form.stake) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.bankroll) }}
+
+                <hr class="mb-4">
+
+                {{ form_row(form.bets) }}
+
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

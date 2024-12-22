@@ -72,6 +72,10 @@ db-fixtures-append: ##  Append fixtures
 validate-schema: ## Valid doctrine mapping
 	@$(SYMFONY) doctrine:schema:validate --skip-sync
 
+ux-icons-import: ## Import icons
+	@$(eval c ?=)
+	@$(SYMFONY) ux:icons:import $(c)
+
 ## —— PHP 🐘 ——————————————————————————————————————————————————————————————————
 
 test: ## Test phpunit
@@ -96,5 +100,12 @@ check: fix-php analyse-php validate-schema lint-twig test
 importmap-install:
 	@$(SYMFONY) importmap:install
 
-compile-asset:
-	@$(SYMFONY) asset-map:compile
+importmap-require:
+	@$(eval c ?=)
+	@$(SYMFONY) importmap:require $(c)
+
+tailwind-init:
+	@$(SYMFONY) tailwind:init
+
+tailwind-watch:
+	@$(SYMFONY) tailwind:build --watch -v

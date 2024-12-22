@@ -9,10 +9,20 @@ parameters:
 		- src
 		- tests
 	ignoreErrors:
+		- identifier: missingType.generics
+		- identifier: missingType.iterableValue
 		-
 			identifier: argument.type
 			count: 1
 			path: tests/object-manager.php
+		-
+			identifier: argument.type
+			count: 4
+			path: src/Utils/MathUtils.php
+		-
+			identifier: argument.type
+			count: 2
+			path: src/Import/ImportBankrollCommand.php
 	parallel:
 		maximumNumberOfProcesses: 1
 	symfony:

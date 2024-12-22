@@ -46,6 +46,9 @@ RUN apt-get install -y libicu-dev \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl
 
+# Install bcmath extension
+RUN docker-php-ext-install bcmath
+
 # Clear packages artifact
 RUN apt-get clean && apt-get --yes --quiet autoremove --purge && \
         rm -rf  /var/lib/apt/lists/* /tmp/* /var/tmp/* \
