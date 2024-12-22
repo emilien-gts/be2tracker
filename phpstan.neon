@@ -1,0 +1,21 @@
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+
+parameters:
+	level: 9
+	paths:
+		- src
+		- tests
+	ignoreErrors:
+		-
+			identifier: argument.type
+			count: 1
+			path: tests/object-manager.php
+	parallel:
+		maximumNumberOfProcesses: 1
+	symfony:
+	    containerXmlPath: var/cache/dev/App_KernelDevDebugContainer.xml
+	doctrine:
+		objectManagerLoader: tests/object-manager.php
