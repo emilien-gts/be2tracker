@@ -96,5 +96,9 @@ check: fix-php analyse-php validate-schema lint-twig test
 importmap-install:
 	@$(SYMFONY) importmap:install
 
+importmap-require:
+	@$(eval c ?=)
+	@$(SYMFONY) importmap:require $(c)
+
 compile-asset:
 	@$(SYMFONY) asset-map:compile

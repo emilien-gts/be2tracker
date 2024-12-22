@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bankroll{% endblock %}
+
+{% block body %}
+    <div class="container p-4">
+        <div class="d-flex align-items-center pb-3">
+            <h1>Bankroll</h1>
+            <div class="ms-auto"></div>
+            <a href="{{ path('app_bankroll_new') }}" class="btn btn-primary">
+                <i class="bi bi-plus me-1"></i> Add bankroll
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover text-center text-nowrap">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Initial bankroll</th>
+                    <th scope="col">ROI</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for bankroll in bankrolls %}
+                        <tr>
+                            <th scope="row">
+                                <a href="{{ path('app_bankroll_show', {id: bankroll.id}) }}" class="text-black">
+                                    {{ bankroll.name }}
+                                </a>
+                            </th>
+                            <td>
+                                {{ bankroll.startingBankroll }} u
+                            </td>
+                            <td>
+                                <span class="text-success">
+                                  <i class="bi bi-caret-up-fill me-1"></i><span>29.6%</span>
+                                </span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

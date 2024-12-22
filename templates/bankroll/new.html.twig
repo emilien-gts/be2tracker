@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bankroll{% endblock %}
+
+{% block body %}
+    <div class="container p-4">
+        <div class="d-flex align-items-center">
+            <h1>Bankroll</h1>
+            <div class="ms-auto"></div>
+            <button type="submit" class="btn btn-primary" form="form">
+                <i class="bi bi-plus me-1"></i> Create
+            </button>
+        </div>
+
+        {{ form_start(form, {attr: {id: 'form'}}) }}
+        {{ form_row(form) }}
+        {{ form_rest(form) }}
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
