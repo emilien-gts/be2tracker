@@ -40,7 +40,7 @@ class BankrollController extends AbstractController
             $this->service->save($bankroll);
 
             return $this->redirectToRoute('app_bankroll_show', [
-                'id' => $bankroll->getId(),
+                'id' => $bankroll->id,
             ]);
         }
 
@@ -54,6 +54,7 @@ class BankrollController extends AbstractController
     {
         return $this->render('bankroll/show.html.twig', [
             'bankroll' => $bankroll,
+            'chart' => $this->service->buildChart($bankroll),
         ]);
     }
 }

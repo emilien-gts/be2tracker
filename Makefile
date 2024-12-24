@@ -100,5 +100,8 @@ importmap-require:
 	@$(eval c ?=)
 	@$(SYMFONY) importmap:require $(c)
 
-compile-asset:
-	@$(SYMFONY) asset-map:compile
+tailwind-init:
+	@$(SYMFONY) tailwind:init
+
+tailwind-watch:
+	@$(SYMFONY) tailwind:build --watch -v

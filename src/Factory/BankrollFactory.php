@@ -22,4 +22,11 @@ final class BankrollFactory extends PersistentProxyObjectFactory
             'startingBankroll' => self::faker()->randomFloat(2, 0, 1000),
         ];
     }
+
+    protected function initialize(): static
+    {
+        return $this->afterPersist(function (Bankroll $bankroll): void {
+            BettingSlipFactory::createMany(15, ['bankroll' => $bankroll]);
+        });
+    }
 }

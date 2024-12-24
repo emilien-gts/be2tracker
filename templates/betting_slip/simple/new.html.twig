@@ -8,7 +8,7 @@
             <div class="h-32 rounded-lg"></div>
             <div class="h-32 rounded-lg lg:col-span-2">
                 <div class="flex items-center pb-4 mb-3">
-                    <h1 class="text-2xl font-semibold text-pink-500">New bankroll</h1>
+                    <h1 class="text-2xl font-semibold text-pink-500">New bet</h1>
                     <div class="ml-auto"></div>
                     <button type="submit"
                             form="form"
@@ -19,7 +19,13 @@
                 </div>
 
                 {{ form_start(form, {attr: {id: 'form'}}) }}
-                {{ form_row(form) }}
+                {{ form_row(form.date) }}
+                {{ form_row(form.bankroll) }}
+
+                <hr class="mb-4">
+
+                {{ form_row(form.bet) }}
+
                 {{ form_rest(form) }}
                 {{ form_end(form) }}
             </div>
