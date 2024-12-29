@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model\BettingSlip;
+namespace App\Model\Bankroll;
 
-use App\Entity\BettingSlip;
+use App\Entity\Bankroll\BettingSlip;
 use App\Utils\MathUtils;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

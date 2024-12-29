@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Bankroll;
 
-use App\Entity\Bankroll;
-use App\Entity\BettingSlip;
+use App\Entity\Bankroll\Bankroll;
+use App\Entity\Bankroll\BettingSlip;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;

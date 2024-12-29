@@ -12,8 +12,8 @@
                 </div>
 
                 <!-- Enum Cards -->
-                {% for enum in enum('App\\Enum\\BettingSlipTypeEnum').cases %}
-                    <a href="{{ path('app_bettingslip_new', {type: enum.value}) }}"
+                {% for enum in enum('App\\Enum\\Bankroll\\BettingSlipTypeEnum').cases %}
+                    <a href="{{ path('app_bankroll_bettingslip_new', {type: enum.value}) }}"
                         class="flex items-center gap-4 rounded-lg border border-gray-100 bg-white p-6 sm:justify-between mb-4"
                     >
                       <span class="rounded-full bg-pink-100 p-3 text-pink-600 sm:order-last">

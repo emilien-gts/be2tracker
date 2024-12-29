@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Bankroll;
 
-use App\Entity\Bet;
-use App\Enum\BetStatusEnum;
+use App\Entity\Bankroll\Bet;
+use App\Enum\Bankroll\BetStatusEnum;
 use App\Form\Base\BaseEnumType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -24,7 +24,7 @@ class BetType extends AbstractType
         ]);
         $builder->add('odds', MoneyType::class, [
             'required' => true,
-            'currency' => 'u',
+            'currency' => '',
         ]);
 
         if ($options['with_stake']) {

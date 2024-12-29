@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Service;
+namespace App\Service\Bankroll;
 
-use App\Entity\Bankroll;
+use App\Entity\Bankroll\Bankroll;
 use App\Model\Bankroll\BankrollMovement;
-use App\Model\BettingSlip\BankrollPeriod;
-use App\Repository\BettingSlipRepository;
+use App\Model\Bankroll\BankrollPeriod;
+use App\Repository\Bankroll\BettingSlipRepository;
 use App\Utils\MathUtils;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;

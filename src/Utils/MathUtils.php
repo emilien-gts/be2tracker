@@ -54,6 +54,11 @@ class MathUtils
         return self::mul($percentage, '100', $scale);
     }
 
+    public static function min(string $number1, string $number2, int $scale = self::DEFAULT_SCALE): string
+    {
+        return self::comp($number1, $number2, $scale) < 0 ? $number1 : $number2;
+    }
+
     public static function round(string $number, int $precision = 0, int $mode = \PHP_ROUND_HALF_UP): string
     {
         if ($precision < 0) {

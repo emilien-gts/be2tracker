@@ -2,8 +2,8 @@
 
 namespace App\Tests\Factory;
 
-use App\Entity\Bet;
-use App\Enum\BetStatusEnum;
+use App\Entity\Bankroll\Bet;
+use App\Enum\Bankroll\BetStatusEnum;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 /**

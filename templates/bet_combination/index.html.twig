@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bet combination{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto p-5">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div class="h-32 rounded-lg"></div>
+            <div class="h-32 rounded-lg lg:col-span-2">
+                {% if combination.complete %}
+                    <div class="flex items-center pb-4 mb-3">
+                        <div role="alert" class="rounded-xl border border-gray-100 bg-white p-4">
+                                    <div class="flex items-start gap-4">
+                                        <span class="text-green-600">
+                                            {{ ux_icon('heroicons:check-circle', {width: '1.5rem', height: '1.5rem'}) }}
+                                        </span>
+
+                                        <div class="flex-1">
+                                            <strong class="block font-medium text-gray-900">{{ combination.name }} (odd : {{ combination.odd }})</strong>
+                                            <div class="mt-1 text-sm text-gray-700">
+                                                <div class="flex items-center gap-1 text-gray-500">
+                                                    <p class="text-xs">Bet {{ combination.item1.stake|unit }} on {{ combination.item1.name }}</p>
+                                                </div>
+                                                <div class="flex items-center gap-1 text-gray-500">
+                                                    <p class="text-xs">Bet {{ combination.item2.stake|unit }} on {{ combination.item2.name }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                {% endif %}
+                <div class="flex items-center pb-4 mb-3">
+                    <h1 class="text-2xl font-semibold text-pink-500">Bet combination</h1>
+                    <div class="ml-auto"></div>
+                    <button type="submit"
+                            form="form"
+                            class="inline-block rounded-full border-2 border-pink-500 bg-pink-500 p-3 text-white hover:bg-white hover:text-pink-500 hover:border-pink-500 focus:outline-none focus:ring active:text-pink-500"
+                    >
+                        {{ ux_icon('heroicons:bolt', {width: '1.25rem', height: '1.25rem'}) }}
+                    </button>
+                </div>
+                <div>
+                    {{ form_start(form, {attr: {id: 'form'}}) }}
+
+                    {{ form_row(form.method) }}
+                    {{ form_row(form.stake) }}
+
+                    <hr class="mb-4">
+                    {{ form_row(form.item1) }}
+                    <hr class="mb-4">
+                    {{ form_row(form.item2) }}
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <div class="h-32 rounded-lg"></div>
+        </div>
+    </div>
+{% endblock %}

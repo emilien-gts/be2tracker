@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Bankroll;
 
 use App\Entity\Trait\IdTrait;
-use App\Enum\BetStatusEnum;
-use App\Repository\BetRepository;
+use App\Enum\Bankroll\BetStatusEnum;
+use App\Repository\Bankroll\BetRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;

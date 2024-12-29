@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Bankroll;
 
 use App\Entity\Trait\IdTrait;
-use App\Enum\BetStatusEnum;
-use App\Enum\BettingSlipTypeEnum;
-use App\Repository\BettingSlipRepository;
+use App\Enum\Bankroll\BetStatusEnum;
+use App\Enum\Bankroll\BettingSlipTypeEnum;
+use App\Repository\Bankroll\BettingSlipRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Service\BettingSlip;
+namespace App\Service\Bankroll\BettingSlip;
 
-use App\Entity\BettingSlip;
-use App\Service\BettingSlip\Editor\AbstractBettingSlipEditor;
+use App\Entity\Bankroll\BettingSlip;
+use App\Service\Bankroll\BettingSlip\Editor\AbstractBettingSlipEditor;
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 
 class BettingSlipEditorService

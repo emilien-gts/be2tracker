@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Bankroll;
 
-use App\Entity\BettingSlip;
-use App\Enum\BettingSlipTypeEnum;
-use App\Service\BettingSlip\BettingSlipEditorService;
-use App\Service\BettingSlip\BettingSlipFactory;
+use App\Entity\Bankroll\BettingSlip;
+use App\Enum\Bankroll\BettingSlipTypeEnum;
+use App\Service\Bankroll\BettingSlip\BettingSlipEditorService;
+use App\Service\Bankroll\BettingSlip\BettingSlipFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,7 +41,7 @@ final class BettingSlipController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $editor->save($bs);
 
-            return $this->redirectToRoute('app_bankroll_show', [
+            return $this->redirectToRoute('app_bankroll_bankroll_show', [
                 'id' => $bs->bankroll?->id,
             ]);
         }
@@ -61,7 +61,7 @@ final class BettingSlipController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $editor->save($bs);
 
-            return $this->redirectToRoute('app_bankroll_bets', [
+            return $this->redirectToRoute('app_bankroll_bankroll_bets', [
                 'id' => $bs->bankroll?->id,
             ]);
         }
@@ -78,7 +78,7 @@ final class BettingSlipController extends AbstractController
         $editor = $this->service->getEditor($bs);
         $editor->delete($bs);
 
-        return $this->redirectToRoute('app_bankroll_bets', [
+        return $this->redirectToRoute('app_bankroll_bankroll_bets', [
             'id' => $bs->bankroll?->id,
         ]);
     }

@@ -13,6 +13,6 @@ final class DefaultController extends AbstractController
     #[Route('')]
     public function index(): Response
     {
-        return $this->redirectToRoute('app_bankroll_index');
+        return $this->redirectToRoute('app_bankroll_bankroll_index');
     }
 }

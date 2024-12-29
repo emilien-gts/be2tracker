@@ -2,13 +2,13 @@
 
 namespace App\Import;
 
-use App\Entity\Bankroll;
-use App\Entity\Bet;
-use App\Entity\BettingSlip;
-use App\Enum\BetStatusEnum;
-use App\Enum\BettingSlipTypeEnum;
-use App\Service\BankrollService;
-use App\Service\BettingSlip\BettingSlipEditorService;
+use App\Entity\Bankroll\Bankroll;
+use App\Entity\Bankroll\Bet;
+use App\Entity\Bankroll\BettingSlip;
+use App\Enum\Bankroll\BetStatusEnum;
+use App\Enum\Bankroll\BettingSlipTypeEnum;
+use App\Service\Bankroll\BankrollService;
+use App\Service\Bankroll\BettingSlip\BettingSlipEditorService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Service\BettingSlip\Editor;
+namespace App\Service\Bankroll\BettingSlip\Editor;
 
-use App\Entity\Bankroll;
-use App\Entity\Bet;
-use App\Entity\BettingSlip;
-use App\Enum\BetStatusEnum;
-use App\Enum\BettingSlipTypeEnum;
-use App\Form\BetType;
+use App\Entity\Bankroll\Bankroll;
+use App\Entity\Bankroll\Bet;
+use App\Entity\Bankroll\BettingSlip;
+use App\Enum\Bankroll\BetStatusEnum;
+use App\Enum\Bankroll\BettingSlipTypeEnum;
+use App\Form\Bankroll\BetType;
 use App\Utils\MathUtils;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;

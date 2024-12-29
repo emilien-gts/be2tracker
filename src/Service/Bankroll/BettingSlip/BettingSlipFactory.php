@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Service\BettingSlip;
+namespace App\Service\Bankroll\BettingSlip;
 
-use App\Entity\Bet;
-use App\Entity\BettingSlip;
-use App\Enum\BettingSlipTypeEnum;
+use App\Entity\Bankroll\Bet;
+use App\Entity\Bankroll\BettingSlip;
+use App\Enum\Bankroll\BettingSlipTypeEnum;
 
 class BettingSlipFactory
 {

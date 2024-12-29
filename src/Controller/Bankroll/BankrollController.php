@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Bankroll;
 
-use App\Entity\Bankroll;
-use App\Form\BankrollType;
-use App\Repository\BankrollRepository;
-use App\Service\BankrollService;
+use App\Entity\Bankroll\Bankroll;
+use App\Form\Bankroll\BankrollType;
+use App\Repository\Bankroll\BankrollRepository;
+use App\Service\Bankroll\BankrollService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,7 +39,7 @@ class BankrollController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->service->save($bankroll);
 
-            return $this->redirectToRoute('app_bankroll_show', [
+            return $this->redirectToRoute('app_bankroll_bankroll_show', [
                 'id' => $bankroll->id,
             ]);
         }
@@ -72,6 +72,6 @@ class BankrollController extends AbstractController
     {
         $this->service->delete($bankroll);
 
-        return $this->redirectToRoute('app_bankroll_index');
+        return $this->redirectToRoute('app_bankroll_bankroll_index');
     }
 }

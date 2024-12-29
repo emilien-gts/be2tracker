@@ -2,9 +2,9 @@
 
 namespace App\Tests\Factory;
 
-use App\Entity\BettingSlip;
-use App\Enum\BettingSlipTypeEnum;
-use App\Service\BettingSlip\BettingSlipEditorService;
+use App\Entity\Bankroll\BettingSlip;
+use App\Enum\Bankroll\BettingSlipTypeEnum;
+use App\Service\Bankroll\BettingSlip\BettingSlipEditorService;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 /**

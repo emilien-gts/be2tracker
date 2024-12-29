@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Bankroll;
 
 use App\Entity\Trait\IdTrait;
-use App\Repository\BankrollRepository;
+use App\Repository\Bankroll\BankrollRepository;
 use App\Utils\MathUtils;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

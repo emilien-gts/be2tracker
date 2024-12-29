@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Service\BettingSlip\Editor;
+namespace App\Service\Bankroll\BettingSlip\Editor;
 
-use App\Entity\BettingSlip;
-use App\Enum\BetStatusEnum;
+use App\Entity\Bankroll\BettingSlip;
+use App\Enum\Bankroll\BetStatusEnum;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 use Symfony\Component\Form\Extension\Core\Type\FormType;

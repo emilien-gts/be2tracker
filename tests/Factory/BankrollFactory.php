@@ -2,7 +2,7 @@
 
 namespace App\Tests\Factory;
 
-use App\Entity\Bankroll;
+use App\Entity\Bankroll\Bankroll;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 /**

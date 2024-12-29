@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enum;
+namespace App\Enum\Bankroll;
 
 use App\Model\Contract\Colorized;
 use App\Model\Contract\Iconized;
